@@ -1,4 +1,4 @@
-# friday-gifs![](./src/assets/logoxs.png)
+# ![](./src/assets/logoxs.png) friday-gifs
 
 > A small Vue.js app to search for fun gifs...
 
