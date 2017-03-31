@@ -2,9 +2,8 @@
   <div id="app">
     <h1>GIFs de viernes<img class="vue-logo" src="./assets/logo.png"></h1>
     <span>Gifs para alegrarse la vida</span>
-    <cat-search :question="'¿Qué mood tienes?'" :placeholder="'Netflix & chill'"></cat-search>
+    <cat-search :question="'¿A mi viernes le hace falta?'" :placeholder="'Netflix & chill'"></cat-search>
     <search-result :image-source="hola"></search-result>
-    <cat-search :question="'¿Gifs de gatos..?'" :placeholder="'Gatitos gordos..'"></cat-search>
     <img class="gif-splash" src="./assets/giphy.gif">
   </div>
 </template>
@@ -25,7 +24,10 @@ export default {
     }
   },
   props: {
-    hola: ''
+    imageSource: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>

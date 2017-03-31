@@ -3,26 +3,54 @@
     <div class="cat-search-container">
       <span class="cat-search-title"> {{question}}</span><span class="cat-search-query">{{query}}</span>
       <input v-model="query" v-bind:placeholder="placeholder" class="cat-search-query-input">
-      <button @click.stop="getGifSearch" class="cat-search-button">Buscar</button>
+      <button @click.stop="getGifSearch(query)" class="cat-search-button">Buscar</button>
+      <search-tile v-if="gifSearchResult" :gifs-data="gifSearchResult"></search-tile> 
     </div>
 </template>
 
 <!-- Component Script -->
 <script>
+import searchTile from './search-result.vue'
   export default {
     name: 'cat-search',
+    components: {
+      searchTile
+    },
     props: {
-      question: '',
-      placeholder: ''
+      question: {
+        type: String,
+        default: ''
+      },
+      placeholder: {
+        type: String,
+        default: ''
+      }
     },
     data: function () {
       return {
-        query: ''
+        query: '',
+        gifSearchResult: {
+          type: Array,
+          default: () => {
+            return []
+          }
+        }
       }
     },
     methods: {
-      getGifSearch () {
-        console.log('searching')
+      getGifSearch (query) {
+        this.gifSearchResult = []
+        {
+        // GET /someUrl
+        this.$http.get(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC`).then(response => {
+
+          
+          // get body data
+          this.gifSearchResult = response.body.data
+        }, response => {
+            // error callback
+          });
+        }
       }
     }
   }
