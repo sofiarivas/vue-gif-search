@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <h1>GIFs de viernes<img class="vue-logo" src="./assets/logo.png"></h1>
+    <h1>GIFs de viernes<img class="vue-logo" src="https://vuejs.org/images/logo.png"></h1>
     <span>Gifs para alegrarse la vida</span>
     <cat-search :question="'¿A mi viernes le hace falta?'" :placeholder="'Netflix & chill'"></cat-search>
-    <search-result :image-source="hola"></search-result>
-    <img class="gif-splash" src="./assets/giphy.gif">
+    <search-result></search-result>
+    <img class="gif-splash" src="https://media.giphy.com/media/3o7btV1sSvBaaSAQKc/giphy.gif">
+    <span class="build-with-vue"> Build with </span><a class="vue-link" href="https://vuejs.org">Vue.js</a>.
   </div>
 </template>
 
@@ -47,6 +48,7 @@ h1, h2 {
 }
 
 h1 {
+  margin-top: 30px;
   color: hotpink;
 }
 
@@ -61,8 +63,24 @@ a {
 }
 
 .gif-splash {
-  width: 90%;
-  height:90%;
-  margin: 20px 0 auto;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  display: block;
 }
+
+.build-with-vue {
+  font-size: 11px;
+}
+
+.vue-link {
+  font-size: 12px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#app {
+  margin: 0;
+}
+
 </style>

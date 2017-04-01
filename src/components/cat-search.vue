@@ -4,7 +4,7 @@
       <span class="cat-search-title"> {{question}}</span><span class="cat-search-query">{{query}}</span>
       <input v-model="query" v-bind:placeholder="placeholder" class="cat-search-query-input">
       <button @click.stop="getGifSearch(query)" class="cat-search-button">Buscar</button>
-      <search-tile v-if="gifSearchResult" :gifs-data="gifSearchResult"></search-tile> 
+      <search-tile v-if="gifSearchResult.length > 0" :gifs-data="gifSearchResult"></search-tile> 
     </div>
 </template>
 
@@ -64,8 +64,8 @@ import searchTile from './search-result.vue'
   }
 
   .cat-search-container {
-  	margin: 20px auto;
-  	border-top: 1px solid grey;
+  	margin: 20px auto 0;
+  	border-top: 1px solid lightgrey;
   	width: 85%;
   }
 
@@ -95,7 +95,7 @@ import searchTile from './search-result.vue'
     padding: 10px 30px;
     border-radius: 2px;
     border: 0;
-    margin-top: 20px;
+    margin: 20px;
   }
   .cat-search-button:active {
     background-color: hotpink;
