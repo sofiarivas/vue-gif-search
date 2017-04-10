@@ -43,8 +43,6 @@ import searchTile from './search-result.vue'
         {
         // GET /someUrl
         this.$http.get(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC`).then(response => {
-
-          
           // get body data
           this.gifSearchResult = response.body.data
         }, response => {
@@ -87,6 +85,11 @@ import searchTile from './search-result.vue'
     font-size: 14px;
     border-radius: 2px;
     color: hotpink;
+    outline: none;
+  }
+
+  .cat-search-query-input:focus {
+    border: 1px solid aquamarine;
   }
 
   .cat-search-button {
@@ -97,6 +100,7 @@ import searchTile from './search-result.vue'
     border: 0;
     margin: 20px;
   }
+
   .cat-search-button:active {
     background-color: hotpink;
     font-weight: bold;

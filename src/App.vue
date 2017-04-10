@@ -48,6 +48,7 @@ h1, h2 {
 }
 
 h1 {
+  font-family: 'Gochi Hand', cursive;
   margin-top: 30px;
   color: hotpink;
 }

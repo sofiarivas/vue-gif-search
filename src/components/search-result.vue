@@ -1,10 +1,7 @@
 <!-- Component Template -->
 <template>
   <div>
-      <video width="320" height="240" autoplay v-for="gif in gifsData">
-      <source :src="gif.images.downsized_small.mp4" type="video/mp4">
-        Tu navegador no soporta la etiqueta de video HTML, no gifs for you my friend.
-    </video>
+      <img v-for="gif in gifsData" :src="gif.images.fixed_width.url" class="search-item">
   </div>
 </template>
 
@@ -25,5 +22,9 @@
 
 <!-- If necessary, component styles -->
 <style scoped>
+
+  .search-item {
+    margin: 10px;
+  }
 
 </style>
