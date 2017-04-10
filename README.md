@@ -1,8 +1,18 @@
-# ![](./src/assets/logoxs.png) friday-gifs
+# ![](./src/assets/logoxs.png) Friday Gifs
 
 > A small Vue.js app to search for fun gifs...
 
 ![](./src/assets/giphy.gif)
+
+##Used tools:
+```
+[Vue CLI](https://github.com/vuejs/vue-cli)
+```
+
+```
+[Vuejs templates - webpack simple](https://github.com/vuejs/vue-cli)
+A simple Vue 2.0 Webpack & vue-loader setup for quick prototyping.
+```
 
 ## Build Setup
 
